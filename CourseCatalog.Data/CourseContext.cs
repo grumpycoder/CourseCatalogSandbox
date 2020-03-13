@@ -24,6 +24,8 @@ namespace CourseCatalog.Data
             modelBuilder.Entity<CourseLevel>().ToTable("CourseLevels");
             modelBuilder.Entity<CourseType>().ToTable("CourseTypes");
             modelBuilder.Entity<Grade>().ToTable("Grades");
+            modelBuilder.Entity<DeliveryType>().ToTable("DeliveryTypes");
+            modelBuilder.Entity<Tag>().ToTable("Tags");
         }
     }
 }

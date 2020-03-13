@@ -18,6 +18,7 @@
         public bool? CreditAdvancementAvailable { get; set; }
         public string CreditTypes { get; set; }
         public string Tags { get; set; }
+        public decimal? CreditUnits { get; set; }
 
         public Grade LowGrade { get; set; }
         public Grade HighGrade { get; set; }
@@ -33,7 +34,6 @@
 
         public int? CourseLevelId { get; set; }
         public int? CourseTypeId { get; set; }
-        public decimal? CreditUnits { get; set; }
         public int? SubjectAreaId { get; set; }
     }
 }

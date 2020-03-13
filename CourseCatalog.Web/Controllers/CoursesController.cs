@@ -1,12 +1,10 @@
-﻿using System;
+﻿using CourseCatalog.Data;
+using CourseCatalog.Domain;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using CourseCatalog.Data;
-using CourseCatalog.Domain;
 
 namespace CourseCatalog.Web.Controllers
 {
@@ -25,7 +23,12 @@ namespace CourseCatalog.Web.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Course>>> GetCourses()
         {
-            return await _context.Courses.Take(10).ToListAsync();
+            return await _context.Courses
+                .Include(x => x.LowGrade)
+                .Include(x => x.HighGrade)
+                .Include(c => c.CourseType)
+                .Include(c => c.CourseLevel)
+                .Take(10).ToListAsync();
         }
 
         // GET: api/Courses/5
