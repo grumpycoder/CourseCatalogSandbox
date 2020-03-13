@@ -36,35 +36,4 @@
         public decimal? CreditUnits { get; set; }
         public int? SubjectAreaId { get; set; }
     }
-
-    public class SubjectArea
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string SubjectAreaCode { get; set; }
-    }
-
-    public class CourseLevel
-    {
-        public int Id { get; set; }
-        public string CourseLevelCode { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-    }
-
-    public class CourseType
-    {
-        public int Id { get; set; }
-        public string CourseTypeCode { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public bool? IsCore { get; set; }
-    }
-
-    public class Grade
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-    }
 }
