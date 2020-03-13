@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using CourseCatalog.Data;
 
 namespace CourseCatalog.ConsoleApp
@@ -10,7 +11,14 @@ namespace CourseCatalog.ConsoleApp
         {
             Console.WriteLine("Hello World!");
 
-            _context.Database.EnsureCreated();
+            //_context.Database.EnsureCreated();
+
+            var courses = _context.Courses.Take(20).ToList();
+
+            foreach (var course in courses)
+            {
+                Console.WriteLine(course.CourseCode);
+            }
         }
     }
 }

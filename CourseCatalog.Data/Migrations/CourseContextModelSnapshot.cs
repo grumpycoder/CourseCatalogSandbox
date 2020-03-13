@@ -16,7 +16,7 @@ namespace CourseCatalog.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.2")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("Relational:MaxIdentifierLength", 200)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("CourseCatalog.Domain.Course", b =>
@@ -108,7 +108,7 @@ namespace CourseCatalog.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CourseLevel");
+                    b.ToTable("CourseLevels");
                 });
 
             modelBuilder.Entity("CourseCatalog.Domain.CourseType", b =>
@@ -132,7 +132,7 @@ namespace CourseCatalog.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CourseType");
+                    b.ToTable("CourseTypes");
                 });
 
             modelBuilder.Entity("CourseCatalog.Domain.Grade", b =>
@@ -150,7 +150,7 @@ namespace CourseCatalog.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Grade");
+                    b.ToTable("Grades");
                 });
 
             modelBuilder.Entity("CourseCatalog.Domain.Course", b =>

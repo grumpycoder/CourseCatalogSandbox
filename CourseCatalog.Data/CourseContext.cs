@@ -15,8 +15,13 @@ namespace CourseCatalog.Data
         {
             string connectionString = "Data Source=.;initial catalog=CoursesDemo;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False;Application Name=Courses";
             optionsBuilder.UseSqlServer(connectionString);
+        }
 
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CourseLevel>().ToTable("CourseLevels"); 
+            modelBuilder.Entity<CourseType>().ToTable("CourseTypes"); 
+            modelBuilder.Entity<Grade>().ToTable("Grades"); 
         }
     }
 }
