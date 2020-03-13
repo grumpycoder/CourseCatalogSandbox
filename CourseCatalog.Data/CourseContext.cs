@@ -12,6 +12,8 @@ namespace CourseCatalog.Data
         }
 
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Program> Programs { get; set; }
+
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
